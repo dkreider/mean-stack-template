@@ -1,0 +1,11 @@
+{
+  "name": "mean-stack-template",
+  "version": "1.0.0",
+  "description": "Mean Stack Template",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.js"
+  },
+  "author": "Daniel K",
+  "license": "ISC"
+}
