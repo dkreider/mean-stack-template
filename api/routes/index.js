@@ -8,10 +8,12 @@
 
 const express = require("express");
 const router = express.Router();
-const ctrlHelloWorld = require("../controllers/helloWorld");
+const ctrlMessages = require("../controllers/messages");
 
 router
-    .route("/hello")
-    .get(ctrlHelloWorld.sendHello);
+    .route("/message")
+    .delete(ctrlMessages.deleteMessage)
+    .get(ctrlMessages.getMessages)
+    .post(ctrlMessages.saveMessage);
 
 module.exports = router;
