@@ -3,15 +3,13 @@ const message = mongoose.model("message");
 
 module.exports.deleteMessage = function(req, res) {
 
-    if (!req.body.id) {
+    if (!req.query.messageId) {
 
         return res.status(400).send("No message id given.");
 
     }
 
-    message.findByIdAndRemove(req.body.id, function(deleteError, message) {
-
-    console.log(req.body.id);
+    message.findByIdAndRemove(req.query.messageId, function(deleteError, message) {
 
         if (deleteError) {
 
