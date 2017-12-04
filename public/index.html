@@ -10,9 +10,26 @@
         <script src="js/materialize/materialize.min.js"></script>
         <script src="js/angular/angular.min.js"></script>
     </head>
-    <body ng-controller="helloWorld" class="blue">
-        <h1 class="center">{{message}}</h1>
+    <body ng-controller="messages">
+        <div class="container">
+            <div class="row">
+                <div class="col s1"></div>
+                <form ng-submit="addMessage()">
+                    <div class="input-field col s8">
+                        <input id="message" type="text" ng-model="message"/>
+                        <label for="message">Message</label>
+                        <ul class="collection" ng-repeat="message in messages">
+                            <li class="collection-item"><div>{{message.message}} ({{message.messageDate | date}})<a href="#" ng-click="deleteMessage(message._id)"><i class="material-icons right">delete</i></a></div></li>
+                        </ul>
+                    </div>
+                    <div class="input-field col s2">
+                        <button class="btn align-center pink"><i class="material-icons">add</i></button>                                                                    
+                    </div>
+                </form>
+                <div class="col s1"></div>
+            </div>
+        </div>
         <script src="js/index.js"></script>
-        <script src="js/controllers/helloWorld.js"></script>
+        <script src="js/controllers/messages.js"></script>
     </body>
 </html>
