@@ -4,13 +4,17 @@
   "description": "Mean Stack Template",
   "main": "index.js",
   "scripts": {
-    "start": "index.js"
+    "start": "index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Daniel K",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^4.13.11"
-  }
+    "mongoose": "^4.13.11",
+    "snyk": "^1.192.0"
+  },
+  "snyk": true
 }
